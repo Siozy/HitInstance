@@ -1,0 +1,13 @@
+package siozy.dev.lunaspring.API.conditions.abs;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+public @interface ConditionId {
+    String value();
+    boolean hasNegativeVersion() default true;
+}

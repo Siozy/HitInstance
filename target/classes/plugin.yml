@@ -1,0 +1,6 @@
+name: HitInstance
+version: '1.0-SNAPSHOT'
+
+main: siozy.dev.lunaspring.LunaSpring
+api-version: '1.21.11'
+load: POSTWORLD
