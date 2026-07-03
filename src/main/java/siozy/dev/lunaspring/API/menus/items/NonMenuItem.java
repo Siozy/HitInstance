@@ -19,6 +19,9 @@ import org.bukkit.inventory.EquipmentSlotGroup;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.*;
+import org.bukkit.inventory.meta.trim.ArmorTrim;
+import org.bukkit.inventory.meta.trim.TrimMaterial;
+import org.bukkit.inventory.meta.trim.TrimPattern;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
@@ -111,6 +114,8 @@ public class NonMenuItem implements Cloneable {
 
         // POTION EFFECTS
         this.applyPotionEffects(section);
+
+        this.applyTrim(section);
     }
 
     // GETTERS
@@ -254,6 +259,7 @@ public class NonMenuItem implements Cloneable {
         this.setUnbreakable(itemSection.getBoolean("unbreakable", false));
         this.applyModelData(itemSection);
         this.applyPotionEffects(itemSection);
+        this.applyTrim(itemSection);
 
         return this;
     }
@@ -325,6 +331,45 @@ public class NonMenuItem implements Cloneable {
             this.itemStack.setItemMeta(meta);
         }
         return this;
+    }
+
+    public NonMenuItem applyTrim(TrimPattern pattern, TrimMaterial material) {
+        ItemStack item = this.getItemStack();
+        if (item == null || !(item.getItemMeta() instanceof ArmorMeta armorMeta)) {
+            return this;
+        }
+
+        if (pattern != null && material != null) {
+            ArmorTrim trim = new ArmorTrim(material, pattern);
+            armorMeta.setTrim(trim);
+            item.setItemMeta(armorMeta);
+        }
+
+        return this;
+    }
+
+    public NonMenuItem applyTrim(ConfigurationSection section) {
+        var trimSection = section.getConfigurationSection("trim");
+        if (trimSection == null) return this;
+        // 1. Проверяем, является ли предмет броней
+        ItemStack item = this.getItemStack();
+        if (item == null || !(item.getItemMeta() instanceof ArmorMeta armorMeta)) {
+            return this;
+        }
+
+        // 2. Получаем данные из конфига
+        String patternKey = trimSection.getString("pattern"); // например, "spire"
+        String materialKey = trimSection.getString("material"); // например, "gold"
+
+        if (patternKey == null || materialKey == null) {
+            return this;
+        }
+
+        // 3. Используем Registry для получения объектов отделки (в 1.21 это стандарт)
+        TrimPattern pattern = Registry.TRIM_PATTERN.get(NamespacedKey.minecraft(patternKey.toLowerCase()));
+        TrimMaterial material = Registry.TRIM_MATERIAL.get(NamespacedKey.minecraft(materialKey.toLowerCase()));
+
+        return this.applyTrim(pattern, material);
     }
 
 
