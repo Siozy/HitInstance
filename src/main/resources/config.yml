@@ -1,0 +1,102 @@
+# Включить дебаг всех LunaPlugin?
+debug: false
+# Включить ли оповещение о новых версиях LunaSpring?
+checkUpdates: true
+# Включить ли отправку анонимной статистики?
+enableMetrics: true
+# Включить ли обработку автоматического закрытия инвентаря LunaSpring (IMenu) при перемещении игрока
+# С открой меню (Чаще всего - такое передвижение дают различные чит-клиенты)
+moveCheckingEnabled: false
+# Включить ли базовые флаги LunaSpring для WorldGuard? (Требуется перезагрузка сервера)
+enableWorldGuardFlags: true
+# Выбор языка для перевода через класс Localization. Если файла языка не существует, то
+# Он сам скачается на сервер в папку localizeLangs с нужной версией и языком после перезагрузки.
+# Доступные языки здесь: https://mcasset.cloud/26.1.2/assets/minecraft/lang
+language: ru_ru
+# * Переменные цветов. Могут использоваться в любом плагине LunaSpring *
+# Также есть возможность использовать их в плейсхолдере %lunaspring_color-\{S\}%
+colors:
+  PREFIX:
+    abbr: '\{P\}'
+    variable: "&x&D&5&B&3&F&D[&x&D&F&4&9&F&FL&x&D&7&4&7&F&Fu&x&C&E&4&5&F&Fn&x&C&6&4&4&F&Fa&x&B&E&4&2&F&FS&x&B&5&4&0&F&Fp&x&A&D&3&E&F&Fr&x&A&5&3&D&F&Fi&x&9&C&3&B&F&Fn&x&9&4&3&9&F&Fg&x&D&5&B&3&F&D]"
+  MAIN_COLOR:
+    abbr: '\{M\}'
+    variable: "&x&9&8&6&3&E&7"
+  SECONDARY_COLOR:
+    abbr: '\{S\}'
+    variable: "&x&D&5&B&3&F&D"
+  ERROR_COLOR:
+    abbr: '\{E\}'
+    variable: "&x&F&F&3&B&3&B"
+  PURPLE_COLOR:
+    abbr: '\{P\}'
+    variable: '&x&A&F&4&7&F&F'
+  LIME_COLOR:
+    abbr: '\{L\}'
+    variable: '&x&0&2&F&B&1&4'
+  YELLOW_COLOR:
+    abbr: '\{Y\}'
+    variable: '&x&e&d&d&3&5&1'
+
+# * Цветовые коды для выделения сообщений в консоли *
+on_load_plugin_text_colors: "bcde"
+
+pl_command:
+  enabledPlugin: '{S}Включен'
+  disabledPlugin: '{E}Отключен'
+  unknownAuthors: 'Не указано'
+
+# * Сообщения *
+messages:
+  tooManyArgs: '{E}Слишком много аргементов!'
+  tooLowArgs: '{E}Слишком мало аргементов!'
+  noPermission: "{E}Нет прав на выполнение команды!"
+  invalidSender: '{E}Эту команду нельзя использовать от имени: [sender]!'
+  wrongArguments: '{E}Команду нельзя вызвать без аргументов!'
+  undefinedCommand: '{E}Неизвестная команда!'
+  noDependency: '{E}Зависимость &n[dependency] &r{E}не обнаружена, соответствующий менеджер выключен!'
+  noVaultProvider: '{E}Плагин реализующий экономику Vault отсутствует! (Essentials, CMI, SateCore)'
+  reloaded: '{P}{S}Библиотека перезагружена'
+  savedSource: '{S}Ресурс [file] сохранен'
+  loadedSource: '{S}Ресурс [file] загружен'
+  listenerRegistered: '{S}Оcновной обработчик событий LunaSpring зарегистрирован'
+  placeholderRegistered: '{S}Плейсхолдер {M}[identifier] {S}зарегистрирован!'
+  hooked: "{P}&f| {S}[plugin] &f| "
+  hooked-count: "{P} &f| Кол-во загруженных LunaPlugin: {S}[count]"
+  version: '{S}[version] &f|'
+  showVersion: '[pluginName] [version]'
+  server-info:
+    - ""
+    - "&fОнлайн игроков: {S}[online] &f/ {S}[max-players]"
+    - "&fВерсии: {S}[bukkit-version] &f| {S}[mc-version]"
+    - "&fПорт: {S}[port]"
+    - "&fСредний ТПС: {S}[average_tps]"
+    - ""
+  plugins:
+    - ''
+    - '    {S}| [plugin-name] &fby {S}[plugin-authors]'
+    - '    {S}| &fВерсия: {S}[plugin-version]'
+    - '    {S}| &fСостояние: {S}[status]'
+    - ''
+  subCommandClasses: 'В пакете [package] отсканировано [amount] подкоманд: [commands]'
+  subNoPermission: {}
+  flags:
+    lsp-elytra-glide: "{E}Вы не можете глайдить на элитрах здесь!"
+    lsp-elytra-glide-hard: "{E}Вы не можете глайдить на элитрах здесь!"
+    lsp-elytra-boost: "{E}Вы не можете использовать фейерверк для элитр здесь!"
+    lsp-enable-fly: "{E}Вы не можете включить полёт здесь!"
+    lsp-enable-sprint: "{E}Вы не можете пробежаться здесь!"
+    lsp-enable-sneak: "{E}Вы не можете присесть здесь!"
+    lsp-shear-entities: "{E}Вы не можете постричь моба здесь!"
+    lsp-bukket-fill: "{E}Вы не можете заполнить ведро здесь!"
+    lsp-bukket-empty: "{E}Вы не можете опустошить ведро здесь!"
+    lsp-jump: "{E}Вы не можете прыгнуть здесь!"
+    lsp-damage-items: "{E}Вы не можете немного поломать предмет!"
+    lsp-enable-crafts: "{E}Вы не можете скрафтить предмет здесь!"
+    lsp-receive-damage: "{E}Вы не можете получить урон здесь!"
+    lsp-use-portals: "{E}Вы не можете использовать портал!"
+    lsp-pickup-exp: "{E}Вы не можете подобрать опыт здесь!"
+    lsp-open-inventory: "{E}Вы не можете открыть инвентарь здесь!"
+    lsp-click-inventory: "{E}Вы не можете нажать по инвентарю здесь!"
+    lsp-regenerate-food-level: "{E}Вы не можете восполнить голод здесь!"
+    lsp-disable-exhaust-food-level: "{E}Вы не можете потратить голод здесь!"

@@ -1,6 +1,44 @@
 name: HitInstance
-version: '1.0-SNAPSHOT'
+version: '${version}'
 
 main: siozy.dev.lunaspring.LunaSpring
 api-version: '1.21.11'
 load: POSTWORLD
+commands:
+  lunaspring:
+    aliases:
+      - lsp
+      - ls
+      - spring
+      - lspring
+  plugins:
+    aliases:
+      - pl
+authors:
+  - NovaSparkle
+  - ProGiple
+  - Siozy
+softdepend:
+  - PlaceholderAPI
+  - NBTAPI
+  - WorldEdit
+  - WorldGuard
+  - Vault
+libraries:
+  - com.github.ben-manes.caffeine:caffeine:3.1.8
+
+permissions:
+  lunaspring.*:
+    default: false
+  lunaspring.reload:
+    default: op
+  lunaspring.server-info:
+    default: op
+  lunaspring.hooked:
+    default: op
+  lunaspring.plugins:
+    default: op
+  lunaspring.version:
+    default: op
+  lunaspring.moveignore:
+    default: op
