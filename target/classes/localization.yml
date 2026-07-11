@@ -1,0 +1,129 @@
+EntityType:
+  ALLAY: "Тихоня"
+  ARMADILLO: "Броненосец"
+  AXOLOTL: "Аксолотль"
+  BAT: 'Летучая мышь'
+  BEE: "Пчела"
+  BLAZE: "Ифрит"
+  BOGGED: "Болотник"
+  BREEZE: "Бриз"
+  CAMEL: "Верблюд"
+  CAT: "Кот"
+  CAVE_SPIDER: 'Пещерный паук'
+  CHICKEN: "Курица"
+  COD: 'Треска'
+  COW: "Корова"
+  CREEPER: "Крипер"
+  DOLPHIN: "Дельфин"
+  DONKEY: 'Осёл'
+  DROWNED: "Утопленник"
+  ELDER_GUARDIAN: 'Древний страж'
+  ENDER_DRAGON: "Эндер дракон"
+  ENDERMITE: "Эндермит"
+  ENDERMAN: "Эндермен"
+  EVOKER: "Заклинатель"
+  FROG: "Лягушка"
+  FOX: "Лиса"
+  GHAST: "Гаст"
+  GLOW_SQUID: "Светящийся спрут"
+  GOAT: "Коза"
+  GUARDIAN: "Страж"
+  HUSK: "Кадарв"
+  HOGLIN: 'Хоглин'
+  HORSE: "Лошадь"
+  ILLUSIONER: "Иллюзор"
+  IRON_GOLEM: "Железный голем"
+  LLAMA: "Лама"
+  MAGMA_CUBE: "Магмовый куб"
+  MUSHROOM_COW: "Мухомоор"
+  MULE: "Мул"
+  OCELOT: "Оцелот"
+  PANDA: "Панда"
+  PARROT: "Попугай"
+  PIG: "Свинья"
+  PIGLIN: "Пиглин"
+  PIGLIN_BRUTE: "Брутальный пиглин"
+  PILLAGER: 'Разбойник'
+  PHANTOM: 'Фантом'
+  POLAR_BEAR: "Белый медведь"
+  PUFFERFISH: "Иглобрюх"
+  RABBIT: "Кролик"
+  RAVAGER: "Разоритель"
+  SALMON: "Лосось"
+  SHEEP: "Овца"
+  SHULKER: "Шалкер"
+  SILVERFISH: 'Чешуйница'
+  SKELETON: "Скелет"
+  SKELETON_HORSE: "Лошадь скелет"
+  SLIME: "Слайм"
+  SNOW_GOLEM: "Снежный голем"
+  SNIFFER: "Нюхач"
+  SPIDER: 'Паук'
+  SQUID: "Спрут"
+  STRAY: "Зимогор"
+  STRIDER: "Лавомерка"
+  TADPOLE: "Головастик"
+  TRADER_LLAMA: "Лама торговца"
+  TROPICAL_FISH: "Тропическая рыба"
+  TURTLE: "Черепаха"
+  VEX: "Вредина"
+  VILLAGER: "Житель"
+  VINDICATOR: "Поборник"
+  WANDERING_TRADER: "Странствующий торговец"
+  WARDEN: 'Варден'
+  WITCH: "Ведьма"
+  WITHER: "Иссушитель"
+  WITHER_SKELETON: "Визер-Скелет"
+  WOLF: "Волк"
+  ZOMBIE: "Зомби"
+  ZOMBIE_HORSE: "Зомби лошадь"
+  ZOMBIE_VILLAGER: "Зомбифицированный житель"
+  ZOMBIFIED_PIGLIN: "Свинозомби"
+  ZOGLIN: "Зоглин"
+Enchantment:
+  PROTECTION: 'Защита'
+  FIRE_PROTECTION: 'Огнеупорность'
+  FEATHER_FALLING: 'Плавное падение'
+  BLAST_PROTECTION: 'Взрывоустойчивость'
+  PROJECTILE_PROTECTION: 'Защита от снарядов'
+  RESPIRATION: 'Подводное дыхание'
+  AQUA_AFFINITY: 'Родство с водой'
+  THORNS: 'Шипы'
+  DEPTH_STRIDER: 'Подводная ходьба'
+  FROST_WALKER: 'Ледоход'
+  BINDING_CURSE: 'Проклятие несъемности'
+  SHARPNESS: 'Острота'
+  SMITE: 'Небесная кара'
+  BANE_OF_ARTHROPODS: 'Бич членистоногих'
+  KNOCKBACK: 'Отдача'
+  FIRE_ASPECT: 'Заговор огня'
+  LOOTING: 'Добыча'
+  SWEEPING_EDGE: 'Разящий клинок'
+  EFFICIENCY: 'Эффективность'
+  SILK_TOUCH: 'Шелковое касание'
+  UNBREAKING: 'Прочность'
+  FORTUNE: 'Удача'
+  POWER: 'Сила'
+  PUNCH: 'Отбрасывание'
+  FLAME: 'Горящая стрела'
+  INFINITY: 'Бесконечность'
+  LUCK_OF_THE_SEA: 'Везучий рыбак'
+  LURE: 'Приманка'
+  LOYALTY: 'Верность'
+  IMPALING: 'Пронзатель'
+  RIPTIDE: 'Тягун'
+  CHANNELING: 'Громовержец'
+  MULTISHOT: 'Тройной выстрел'
+  QUICK_CHARGE: 'Быстрая перезарядка'
+  PIERCING: 'Бронебойность'
+  DENSITY: 'Плотность'
+  BREACH: 'Пробитие'
+  WIND_BURST: 'Порыв ветра'
+  MENDING: 'Починка'
+  VANISHING_CURSE: 'Проклятие утраты'
+  SOUL_SPEED: 'Скорость души'
+  SWIFT_SNEAK: 'Проворство'
+Custom:
+  world: "Верхний мир"
+  world_nether: "Незер"
+  world_the_end: "Энд"

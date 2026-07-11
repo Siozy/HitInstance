@@ -32,6 +32,7 @@ import siozy.dev.lunaspring.API.util.service.managers.ColorManager;
 import siozy.dev.lunaspring.API.util.service.managers.NBTManager;
 import siozy.dev.lunaspring.API.util.utilities.LunaMath;
 import siozy.dev.lunaspring.API.util.utilities.Utils;
+import siozy.dev.lunaspring.LunaSpring;
 
 import java.io.Serializable;
 import java.util.*;
@@ -437,6 +438,7 @@ public class NonMenuItem implements Cloneable {
         if (aSection == null) return this;
 
         ItemMeta meta = this.getMeta();
+        String itemSlotName = section.getName().toLowerCase(); // "helmet", "chestplate", "elytra"...
 
         for (String key : aSection.getKeys(false)) {
             ConfigurationSection attributeSection = aSection.getConfigurationSection(key);
@@ -450,22 +452,18 @@ public class NonMenuItem implements Cloneable {
 
             double value = attributeSection.getDouble("value");
 
-            // Получаем слот из конфига
             String slotString = attributeSection.getString("slot", "HAND").toUpperCase();
             EquipmentSlotGroup group = EquipmentSlotGroup.getByName(slotString);
             if (group == null) continue;
 
-            String name = attributeSection.getString("name", key.toLowerCase() + "_mod");
-
-            // Создаем модификатор
+            // ключ всегда генерируется сам: имя_предмета + атрибут
             AttributeModifier modifier = new AttributeModifier(
-                    NamespacedKey.minecraft(name.toLowerCase()),
+                    new NamespacedKey(LunaSpring.getInstance(), itemSlotName + "_" + key.toLowerCase()),
                     value,
                     operation,
                     group
             );
 
-            // ВАЖНО: Добавляем модификатор с учетом группы слотов
             meta.addAttributeModifier(attribute, modifier);
         }
 

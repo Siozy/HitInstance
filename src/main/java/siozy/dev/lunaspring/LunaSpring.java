@@ -65,10 +65,6 @@ public final class LunaSpring extends LunaPlugin {
 
         this.setUpBungeeCordMessaging();
 
-        if (LSConfig.getBoolean("enableMetrics")) {
-            this.initializeMetrics();
-        }
-
         if (LSConfig.getBoolean("checkUpdates")) {
             String path = "https://raw.githubusercontent.com/NovaSparkle/LunaSpring/master/VERSION";
             this.checkUpdates(path, (ver, dver, status) -> {
@@ -150,11 +146,6 @@ public final class LunaSpring extends LunaPlugin {
 
     public LunaPlugin getLunaPlugin(String name) {
         return Utils.find(this.hookedPlugins, pl -> pl.getName().equals(name)).orElse(null);
-    }
-
-    private void initializeMetrics() {
-        this.metrics = new Metrics(this, 29603);
-        metrics.addCustomChart(new SingleLineChart("hooked_lunaplugins", this.hookedPlugins::size));
     }
 
     @Override
