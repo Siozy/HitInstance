@@ -9,6 +9,7 @@ import org.bukkit.event.player.PlayerAttemptPickupItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import siozy.dev.lunaspring.API.items.ComponentStorage;
@@ -35,8 +36,13 @@ public class ItemComponentsHandler implements Listener {
     @EventHandler
     public void onInteract(PlayerInteractEvent e) {
         Player player = e.getPlayer();
+        EquipmentSlot eventHand = e.getHand();
+        if (eventHand == null) return;
 
-        ItemStack hand = player.getInventory().getItemInMainHand();
+        ItemStack hand = eventHand == EquipmentSlot.OFF_HAND
+                ? player.getInventory().getItemInOffHand()
+                : player.getInventory().getItemInMainHand();
+
         if (hand.getType().isAir()) return;
 
         ClickableItemComponent component = ComponentStorage.getComponent(hand, ClickableItemComponent.class);
